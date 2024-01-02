@@ -1,0 +1,138 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html{
+   font-size: 62.5%;
+}
+
+body{
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: aqua;
+}
+
+.face-container{
+   position: relative;
+   .face{
+      position: relative;
+      width: 27rem;
+      height: 22rem;
+      background-color: #eee;
+      border-radius: 50%;
+      display: flex;
+      justify-content: space-around;
+      z-index: 10;
+   }
+}
+.eye{
+   margin-top: 5rem;
+   width: 8rem;
+   height: 10rem;
+   background-color: black;
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center; 
+}
+.eye-1{
+   transform: rotate(15deg);
+}
+.eye-2{
+   transform: rotate(-15deg);
+}
+.eye-2{
+   .inner-eye{
+      &::before{
+         left: 26px;
+         top: 13px
+      }
+      &::after{
+         left:15px;
+         top: 5px;
+      }
+   }
+}
+.eye-1{
+   .inner-eye{
+      &::before{
+         right:10px;
+      }
+      &::after{
+         left:10px;
+      }
+   }
+}
+.inner-eye{
+   position: relative;
+   width: 5rem;
+   height: 5rem;
+   background-color: #0000;
+   border: 3px solid #fff;
+   border-radius: 50%;
+   animation: moving 5s ease-in infinite alternate;
+
+   &::before{
+      content: "";
+      width: 1.3rem;
+      height: 1.3rem;
+      background-color: #fff;
+      position: absolute;
+      top: 10px;
+      border-radius: 50%;
+   }
+
+   &::after{
+      content: "";
+      width: 0.7rem;
+      height: 0.7rem;
+      background-color: #fff;
+      position: absolute;
+      top: 10px;
+      border-radius: 50%;
+    }
+}
+.nose{
+   width: 5rem;
+   height: 3rem;
+   background-color: #000;
+   border-radius: 50%;
+   position: absolute;
+   top:70%;
+   left:50%;
+   transform: translate(-50%,-50%);
+   z-index: 12;
+}
+
+.ear{
+   width: 8rem;
+   height: 6rem;
+   background-color: #000;
+   border-radius: 50%;
+   position: absolute;
+   top:0;
+}
+
+    .ear-1{
+      transform: rotate(-20deg);
+      left:0;
+   }
+  .ear-2{
+      right:0;
+      transform:rotate(20deg);
+   }
+ 
+
+@keyframes moving {
+   0%{
+      transform: translateY(0);
+   }
+   100%{
+      transform: translateY(2rem);
+   }
+   
+}
